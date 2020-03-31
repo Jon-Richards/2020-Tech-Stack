@@ -1,0 +1,1 @@
+export { PAGE_HOC as Page } from './page_hoc';

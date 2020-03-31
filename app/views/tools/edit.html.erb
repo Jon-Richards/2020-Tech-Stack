@@ -1,0 +1,41 @@
+<h1>Edit Tool</h1>
+
+<%# 
+  # local: true submits the form via ajax.
+%>
+<%= form_with(model: @tool, local: true) do |form| %><br>
+
+<% if @tool.errors.any? %>
+  <div>
+    <h2>
+      <%= pluralize(@tool.errors.count, "error") %> prevented your changes from
+      being saved!
+    </h2>
+    <ul>
+      <% @tool.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<p>
+  <%= form.label :name %><br>
+  <%= form.text_field :name %>
+</p>
+<p>
+  <%= form.label :icon %><br>
+  <%= form.text_field :icon %>
+</p>
+<p>
+  <%= form.label :short_description %><br>
+  <%= form.text_area :short_description %>
+</p>
+<p>
+  <%= form.label :long_description %><br>
+  <%= form.text_area :long_description %>
+</p>
+<p>
+  <%= form.submit %>
+</p>
+<% end %>

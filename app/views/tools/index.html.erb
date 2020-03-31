@@ -1,0 +1,8 @@
+<dl>
+  <% @tools.each do |tool| %>
+  <dt><%= tool.name %></dt>
+  <dd><%= tool.short_description %></dd>
+  <dd><%= link_to 'Show', tool_path(tool) %></dd>
+  <% end %>
+</dl>
+<div id="root"></div>
